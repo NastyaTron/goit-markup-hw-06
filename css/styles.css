@@ -41,7 +41,6 @@ img {
 }
 .header-two {
   display: flex;
-
   align-items: center;
 }
 .logo {
@@ -58,7 +57,8 @@ img {
   color: #2e2f42;
 }
 .item-navigation {
-  display: flex;
+  /* display: flex; */
+  display: none;
   gap: 40px;
   margin: 24px 0;
 }
@@ -114,7 +114,8 @@ img {
   margin-left: auto;
 }
 .item-address {
-  display: flex;
+  /* display: flex; */
+  display: none;
   gap: 40px;
   padding: 24px 0;
 }
@@ -143,16 +144,70 @@ img {
   display: flex;
   align-items: center;
 }
-
+.icon-menu-btn {
+  border: none;
+  background-color: inherit;
+  display: flex;
+  padding: 0;
+  margin: 16px 0;
+}
+.icon-menu {
+  fill: #2f2f37;
+}
+/*  */
+.mob-menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+}
+.mob-menu-item-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 72px;
+}
+.mob-menu-link {
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu-link:hover,
+.mob-menu-link:focus,
+.mob-menu-link:active {
+  color: #404bbf;
+}
+.mob-menu-address {
+  font-style: normal;
+}
+.mob-menu-item-address {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mob-menu-contacts {
+  color: #434455;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
 /* MAIN Section1 */
 .section-page {
-  background: #2e2f42;
-  padding: 188px 0;
+  background-color: #2e2f42;
+  padding: 72px 0;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/people-office-mb.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -160,19 +215,35 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 2dppx),
+  (min-resolution: 192dpi) {
+  .section-page {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-mb-2x.jpg);
+  }
+}
+
 .page-title {
   color: #fff;
   text-align: center;
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
-  letter-spacing: 1.12px;
-  max-width: 496px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  max-width: 288px;
   margin: 0 auto;
 }
 .button {
   display: block;
-  margin: 48px auto;
+  margin-top: 72px;
+  margin-left: auto;
+  margin-right: auto;
   background: #4d5ae5;
   cursor: pointer;
   color: #fff;
@@ -181,8 +252,6 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   padding: 16px 32px;
-  align-items: flex-start;
-  gap: 10px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   min-width: 169px;
@@ -774,7 +843,34 @@ img {
   .container {
     max-width: 768px;
   }
-
+  /* MAIN Section1 */
+  .section-page {
+    padding: 112px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tab.jpg);
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx),
+    (min-resolution: 192dpi) {
+    .section-page {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/people-office-tab-2x.jpg);
+    }
+  }
+  .page-title {
+    max-width: 496px;
+    font-size: 56px;
+    line-height: 1.07;
+  }
+  .button {
+    margin-top: 36px;
+  }
   /* MAIN Section2 */
   .item-about-us {
     gap: 72px 24px;
@@ -831,6 +927,29 @@ img {
     padding: 0 15px;
   }
 
+  /* MAIN Section1 */
+  .section-page {
+    padding: 188px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office.jpg);
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx),
+    (min-resolution: 192dpi) {
+    .section-page {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/people-office-2x.jpg);
+    }
+  }
+  .button {
+    margin-top: 48px;
+  }
   /* MAIN Section2 */
   .section-about-us {
     padding: 120px 0;
