@@ -57,10 +57,7 @@ img {
   color: #2e2f42;
 }
 .item-navigation {
-  /* display: flex; */
   display: none;
-  gap: 40px;
-  margin: 24px 0;
 }
 .link {
   color: #2e2f42;
@@ -70,7 +67,6 @@ img {
   letter-spacing: 0.32px;
   text-align: center;
   padding: 24px 0;
-  gap: 20px;
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -114,10 +110,8 @@ img {
   margin-left: auto;
 }
 .item-address {
-  /* display: flex; */
   display: none;
-  gap: 40px;
-  padding: 24px 0;
+  padding: 16px 0;
 }
 .contacts {
   color: currentColor;
@@ -150,6 +144,7 @@ img {
   display: flex;
   padding: 0;
   margin: 16px 0;
+  cursor: pointer;
 }
 .icon-menu {
   fill: #2f2f37;
@@ -161,6 +156,9 @@ img {
   position: fixed;
   top: 0;
   background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .mob-menu-item-navigation {
   display: flex;
@@ -184,8 +182,10 @@ img {
 .mob-menu-link:active {
   color: #404bbf;
 }
+
 .mob-menu-address {
   font-style: normal;
+  margin-top: 168px;
 }
 .mob-menu-item-address {
   display: flex;
@@ -198,6 +198,25 @@ img {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu-contacts:hover,
+.mob-menu-contacts:focus {
+  color: #4d5ae5;
+}
+.mob-menu-social-block {
+  width: 280px;
+  height: 40px;
+  margin-top: 48px;
+  margin-bottom: 40px;
+}
+.mob-menu-item-soc-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 /* MAIN Section1 */
 .section-page {
@@ -649,15 +668,18 @@ img {
   pointer-events: auto;
 }
 .modal {
-  width: 408px;
-  min-height: 584px;
+  /* width: 408px; */
+  width: 288px;
+  /* min-height: 584px; */
+  height: 623px;
   background-color: #fcfcfc;
   border-radius: 4px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 72px 24px 24px 24px;
+  /* padding: 72px 24px 24px 24px; */
+  padding: 72px 16px 24px 16px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -694,7 +716,8 @@ img {
 }
 
 .modal-text {
-  max-width: 360px;
+  /* max-width: 360px; */
+  max-width: 256px;
   color: #2e2f42;
   text-align: center;
   font-weight: 500;
@@ -709,8 +732,9 @@ img {
   position: relative;
 }
 .input {
-  width: 360px;
+  /* width: 360px; */
   height: 40px;
+  width: 256px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   background-color: transparent;
@@ -748,7 +772,8 @@ img {
   margin-bottom: 16px;
 }
 .modal-comment {
-  width: 360px;
+  /* width: 360px; */
+  width: 256px;
   height: 120px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -782,7 +807,10 @@ img {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
 }
+
 .checkbox-link {
   color: #4d5ae5;
   text-decoration-line: underline;
@@ -793,7 +821,8 @@ img {
   height: 16px;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  margin-right: 12px;
+  /* margin-right: 12px; */
+  margin-right: 8px;
   align-items: center;
   justify-content: center;
   fill: transparent;
@@ -802,7 +831,7 @@ img {
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-accept:checked + label span {
+.input-accept:checked + label span.checkbox {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
@@ -810,7 +839,7 @@ img {
 
 .modal-button {
   display: block;
-  margin: 24px auto;
+  margin: auto;
   background-color: #4d5ae5;
   cursor: pointer;
   color: #fff;
@@ -842,6 +871,25 @@ img {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
+  /* HEADER */
+  .item-navigation {
+    display: flex;
+    gap: 40px;
+  }
+  .logo {
+    margin-right: 120px;
+  }
+  .icon-menu-btn {
+    display: none;
+  }
+  .item-address {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contacts {
+    margin-bottom: 12px;
   }
   /* MAIN Section1 */
   .section-page {
@@ -925,6 +973,16 @@ img {
   .container {
     max-width: 1158px;
     padding: 0 15px;
+  }
+  /* HEADER */
+
+  .item-address {
+    flex-direction: row;
+    gap: 40px;
+    padding: 24px 0;
+  }
+  .logo {
+    margin-right: 76px;
   }
 
   /* MAIN Section1 */
