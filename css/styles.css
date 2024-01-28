@@ -256,6 +256,7 @@ img {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   max-width: 288px;
+  height: 160px;
   margin: 0 auto;
 }
 .button {
